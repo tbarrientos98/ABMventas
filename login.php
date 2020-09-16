@@ -81,10 +81,10 @@ if ($_POST) {
                               <?php endif;?>
 
                               <div class="form-group">
-                                 <input type="text" class="form-control form-control-user" id="txtUsuario" name="txtUsuario" placeholder="Usuario" value="">
+                                 <input type="text" class="form-control form-control-user" id="txtUsuario" name="txtUsuario" placeholder="Usuario" value="tomas">
                               </div>
                               <div class="form-group">
-                                 <input type="password" class="form-control form-control-user" id="txtClave" name="txtClave" placeholder="Contraseña"  value="">
+                                 <input type="password" class="form-control form-control-user" id="txtClave" name="txtClave" placeholder="Contraseña"  value="admin123">
                               </div>
                               <div class="form-group">
                                  <div class="custom-control custom-checkbox small">

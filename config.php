@@ -7,10 +7,10 @@ error_reporting(E_ALL);
 session_start();
 
 class Config {
-    const BBDD_HOST = "127.0.0.1";
-    const BBDD_USUARIO = "root"; //root
-    const BBDD_CLAVE = ""; // vacio
-    const BBDD_NOMBRE = "abmventas"; //abmventas
+    const BBDD_HOST = "192.168.0.210";
+    const BBDD_USUARIO = "tomasbarrientos"; //root
+    const BBDD_CLAVE = "TM45.9786?"; // vacio
+    const BBDD_NOMBRE = "tomasbarrientos"; //abmventas
 }
 
 ?>
