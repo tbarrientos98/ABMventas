@@ -65,6 +65,7 @@ class Domicilio{
                 ";
 
         //Realiza el filtrado
+        
         if (!empty($request['search']['value'])) { 
             $sql.=" AND ( B.nombre LIKE '%" . $request['search']['value'] . "%' ";
             $sql.=" OR D.nombre LIKE '%" . $request['search']['value'] . "%' ";
@@ -76,10 +77,8 @@ class Domicilio{
         
         $resultado = $mysqli->query($sql);
         $lstRetorno = array();
-
         
         while ($fila = $resultado->fetch_assoc()) {
-            
             $domicilio = new Domicilio();
             $domicilio->iddomicilio = $fila["iddomicilio"];
             $domicilio->fk_tipo = $fila["fk_tipo"];

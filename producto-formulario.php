@@ -14,10 +14,12 @@ if ($_POST) {
 
     if (isset($_POST["btnGuardar"])) {
         if (isset($_GET["id"]) && $_GET["id"] > 0) {
-
+            $productoAux = new Producto();
+            $productoAux->idproducto = $_GET["id"];
+            $productoAux->obtenerPorId();
+            $imagenAnterior = $productoAux ->imagen;
             //Actualizo un producto existente
             if ($_FILES["txtImagen"]["error"] === UPLOAD_ERR_OK) {
-                $nombreImagen = "";
                 $nombreAleatorio = date("Ymdhmsi");
                 $archivo_tmp = $_FILES["txtImagen"]["tmp_name"];
                 $nombreArchivo = $_FILES["txtImagen"]["name"];
@@ -36,20 +38,22 @@ if ($_POST) {
                 unlink("archivos/$imagenAnterior");
             }        
             $producto->actualizar();
+            header("Location:productos-listado.php");
            
         } else {
             //Es nuevo
             if ($_FILES["txtImagen"]["error"] === UPLOAD_ERR_OK) {
-                $nombreImagen = "";
+
                 $nombreAleatorio = date("Ymdhmsi");
                 $archivo_tmp = $_FILES["txtImagen"]["tmp_name"];
                 $nombreArchivo = $_FILES["txtImagen"]["name"];
                 $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
                 $nombreImagen = $nombreAleatorio . "." . $extension;
                 move_uploaded_file($archivo_tmp, "archivos/$nombreImagen");
+                $producto->imagen = $nombreImagen;
             }
-            $producto->imagen = $nombreImagen;
             $producto->insertar();
+            header("Location:productos-listado.php");
         }
     } else if (isset($_POST["btnBorrar"])) {
         header("Location:producto-formulario.php");

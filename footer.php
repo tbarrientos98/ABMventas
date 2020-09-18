@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span><a href="https://depcsuite.com" target="_blank" class="pr-5 mr-5">Patrocinado por DePC Suite</a></span>
+            <span><a href="https://www.tomasbarrientos.com.ar" target="_blank" class="pr-5 mr-5">©Copyright Tomás Barrientos 2020</a></span>
         </div>
     </div>
 </footer>

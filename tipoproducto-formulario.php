@@ -10,16 +10,18 @@ if ($_POST) {
     if (isset($_POST["btnGuardar"])) {
         if (isset($_GET["id"]) && $_GET["id"] > 0) {
             //Actualizo un tipo de producto existente
-            header("Location: tipoproducto-formulario.php");
             $tipoProducto->actualizar();
+            header("Location: tipoproductos.php");        
+
         } else {
             //Es nuevo
-            header("Location: tipoproducto-formulario.php");
             $tipoProducto->insertar();
+            header("Location: tipoproductos.php");        
         }
     } else if (isset($_POST["btnBorrar"])) {
-        header("Location: tipoproducto-formulario.php");
+        
         $tipoProducto->eliminar();
+        header("Location: tipoproductos.php");
     }
 }
 
